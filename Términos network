@@ -1,0 +1,47 @@
+*DHCP - Dynamic Host Configuration Protocol
+	Assign IP public and private. It could be server as well.
+	it is into the router.
+
+*LAN - Local Area Network
+
+*VLAN - Virtual Local Area Network
+
+*WAN - Wide Area Network
+	- Ethernet
+	- Wifi
+
+*MAN - Metropolitan Area Network
+
+*IAN - Internet Area Network  (cloud)
+	connects voice and data endpoints within a cloud enviroment over IP. 
+
+*Internet - TCP/IP
+
+*NIC - Network Interface Controller
+		is a computer hardware that connects a computer to a computer network
+
+---------------------------------------------------------------
+	OSI 					TCP/IP
+APLICACION				  APLICACION
+PRESENTACION			  APLICACION		
+SESION					  TRANSPORTE
+TRANSPORTE				  TRANSPORTE
+NETWORK 				  INTERNET
+ENLACE					  NIVEL DE ACCESO A LA RED
+FISICO					  NIVEL FISICO
+
+---------------------------------------------------------------
+*Linux brigdes - way to connect two Ethernet segments together in a protocol independent way. Based on Ethernet address rather 					than IP address (like a router) (LAYER 2)
+
+*IPTables - used to set up, maintain and inspect the tables of IPv4 and IPv6 (ip6tables) packet filter rules in the Linux Kernel.
+			The tables are: filter, nat, mangle, raw, security.
+			These tables are provided by the Linux kernel FIREWALL
+
+*Gateway - Cloud storage gateway - is a network applicance or server which translates cloud storage APIs such as SOAP or REST to block-base storage protocols such as NFS or CIFS.
+		   Cloud Storage Gateways enable companies to integrate cloud storage into applications without moving the applications into the cloud.
+
+DNS - Domain Name System - is a hierarchical distributed naming system for computers, services, or any resource connected to the Internet or a private network.
+		translates Internet domain and host names to IP Addresses. DNS automatically converts the names we type to the IP addressed of web servers hosting. NS implements a distributed database to store this name and address information for all public hosts on the Internet. DNS assumes IP addresses do not change (are statically assigned rather than dynamically assigned).
+
+hypervisor (KVM)-- Manage VMs
+

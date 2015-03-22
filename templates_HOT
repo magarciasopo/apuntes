@@ -1,0 +1,38 @@
+>>Parameters used in Openstack:
+
+(Mongo rith now :)
+*image_id
+*instance_flavor
+*key_name
+*environment_prefix
+*environment_name
+*proxy_to_tid
+*public_external
+*public_managment
+*iot_managment
+*iot_network
+*iot_heartbeat_network
+
+---
+*puppet_node
+*execute_puppet
+
+
+------------>>>>>SECURITY_GROUPS -> Add param by environment and param
+
+>>Resources
+Server
+Floating IP: Public_managment: port-iot-management
+port-iot-managment: 10.0.1.x
+port-iot-network:   10.0.0.x
+
+
+----------->>>>>>NETWORKS  ---->>>>Only assign two ports so why we have params?
+
+---------->>>>>>>What happen with Server_WO_Cinder
+
+
+
+--------->>>>>>>User Data correct = cloud-formation
+
+--------->>>>>>>Avaibility zones = cloud-formatio

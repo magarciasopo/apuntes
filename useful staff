@@ -1,0 +1,15 @@
+>>>Monit
+	>> /etc/monit.d/proceso.conf
+		To kill the monit 'rm this file'
+		'kill -9 monit process'
+		Monit restart by itself
+
+>>>Tunnel: To access to other ports in other machine
+	>> ssh -L localport:host:hostport user@ssh_server -N
+		-L - port forwarding parameters
+		 localport - local port (chose a port that is not in use by other service)
+		 host - server that has the port (hostport) that you want to forward 
+		 hostport - remote port 
+		 -N - do not execute a remote command
+		 user - user that have ssh access to the ssh server 
+		 ssh_server - the ssh server that will be used for forwarding/tunneling

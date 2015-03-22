@@ -1,0 +1,9 @@
+>>>Red Hat = Centos = Scientific linux
+
+>>>Minimum requirements
+	www.redhat.com/rhel/compare
+	manage virtual machine -> good choice to virtualization. Snapshots, rollback,...
+
+>>> Kickstart files -> Text file to automate a instalation. This file could write by hand or by Anaconda.
+	It specifies firewall, users, selinux, packages installed...
+

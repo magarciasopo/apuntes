@@ -1,0 +1,60 @@
+>>>>>>>>>>>USERS
+sudo adduser name -> Añade un nuevo usuario
+sudo chage user -> modifica valores relarivos a la contraseña del usuario, [-l] lectura de dicha información
+/etc/skel -> Contiene los ficheros que se incluiran cuando se cree un nuevo directorio /home
+/etc/adduser.conf -> Contiene los valores por defector que tendran dichos usuarios(Se puede cambiar que un directorio home no se a accesible por everyone)
+/etc/pam.d/common-password -> Se cambian los requisitos de las contraseñas
+
+>>>>>>>>>>>>FILESYSTEMS
+/etc/fstab -> Informacion del filesystem 
+df -h -> Partition utilization
+mount -> información de los ficheros montados
+
+>>>>>>>>>>>NETWORKING
+/etc/network/interfaces -> Muestra las interfaces de cada una de las redes (lo, Ethernet, TCP/IP, bridging)
+Valores:
+	auto -> should be setup at boot time
+	lo -> loopback interface
+	iface -> "interface"
+	eth0 -> Ethernet device 0
+	inet -> IPv4 address space
+	dhcp -> Network adaptor gets its configuration from a DHCP server
+	static -> fixed IP
+	address -> IP address of the host
+	netmask -> Network subnet mask
+	gateway -> Gateway address
+	network -> The network portion of the ip address
+	nameserver -> The IP of a DNS  
+	~ For static interfaces you may also need to edit /etc/resolv.conf to specify DNS servers.
+
+/etc/resolv.conf -> DNS
+/etc/hosts -> Resolv host names before contacting a DNS. Good for frequently used hostnames, or internal network hosts
+/etc/dhcp3/dhcpd.conf
+
+ping 		-> Test that an internet host is reachable
+ifconfig 	-> Administer a TCP/IP network interface
+sudo /etc/init.d/networking [stop, restart, start]
+route 		-> Examine and configure the host's routing table
+
+>>>>>>>>>>>>>CRON
+Cron is used to schecule the execution of scripts
+crontab -e	-> To enter the cron job editor
+
+>>>>>>>>>>>>SERVERS
+To allow windows clients to connect 	-> 	Samba  		Config-> /etc/samba/smb.cnf
+
+
+>>>>>>>>>>>FIREWALL
+Control network traffic in/out. Linux firewalls utilise Netfilter
+Configuring rules in 	-> iptables	(Ubuntu uses ufw as a configuration tool for iptables)
+
+
+>>>>>>>>>>APT-GET
+sudo apt-get install
+sudo apt-get remove
+sudo apt-get update 	-> update the apt index (The repositories are listed in /etc/apt/sources.list)
+sudo apt-get upgrade 
+/var/log/dpkg.log 	-> All actions are recorded into the file
+
+
+

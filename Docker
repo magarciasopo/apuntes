@@ -1,0 +1,88 @@
+contenedores linux
+linux kernel namespaces
+sistemas ficheros aislado
+procesos aislados
+red aislada
+grupo recursos aislados
+copy on write
+-> Base de datos aislada con datos aislados
+
+>>DRIVER
+AUFS
+Device Mapper
+...
+
+>>Comienzos
+Instalaci´on
+Docker cli
+Contenedores
+Imagenes
+Registry
+Dockerfile
+
+>>Docker es un contendor que funciona por procesos: un proceso por cada servicio. Exit terminamos proceso y salimos
+
+#----------------IMAGES--------------------------------
+
+>Imagenes de docker. Docker añade informacion. Es decir, realiza diff  y añade aquello que no tiene.
+
+>Trabajando con imags
+	>listado
+		>docker images
+	>Busqueda en registry
+	>Descarga
+	>Construccion
+		>docker build -t <nombre> <DIR FICHERO>
+	>Eliminacion
+		No se puede eliminar una imagen si esta siendo usada
+	>Docker files:
+		tempales (DSL Domain Specific Language)
+		hasta la 1.5 patron de nombre: Primera mayuscula resto minuscula
+		>42 capas como maximo en una imagen
+		>cada RUN es una nueva capa
+	> Aparece un registro por cada tag que tenga una imagen
+#--------------------START---------------------------
+
+>Instancia linux para poner un demonio docker(a traves de digital ocean)
+>Start & Stop docker
+	docker start
+	docker stop
+>Salir docker sin para
+	Ctrl + P + Q
+>Imagen e instalar en docker:
+	docker run -i -t ubuntu /bin/bash
+>Comprobamos contenedores en docker:
+	docker ps
+>Acceder contenedor
+	docker attach <contenedor>
+>??????
+	docker exec -t -d ?????
+>Comando utilizados desde fuera de docker
+	docker logs -ft
+>Detalles de contenedor
+	docker inspect <contenedor>
+>Ejecutar comandos en la maquina
+	docker -s <container> comandos
+
+#----------
+>ENTRYPOINT 
+	configurar contenedores como si fuesen ejecutables
+	anula comandos lanzados cmd
+	este es lanzado como un subcomando /bin/sh cual nos pasa señales  y no depend de pd1 -> imposible matar
+	> ENTRYPOINT ["executable", arg1, arg2]
+	>Formato ENTRYPOINT command arg1 arg2
+
+#-------------DATA---------------------------
+>Volumes
+	VOLUME (template) 
+	>VOLUME [/var/..]
+	>VOLUME
+
+	NFS
+
+#------------NETWORK-------------------------
+Todo se crea en la misma interfaz
+cada docker una ip
+para conectar dos maquinas LINK .....
+	busca la maquina que tenga esa ip y la link
+	si el servicio no lo encuentra -> no esta levantado, no se crea el contenedor

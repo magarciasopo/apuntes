@@ -1,0 +1,21 @@
+>>Keystone
+	*Creating Users, Roles and Tenants via Keystone (Identity Service) 
+	>Create user: keystone user­-create --­­name <your username> --­­pass <your password> 
+	>Create tenant:  keystone tenant­-create ­­--name <your tenant name> 
+	>Create role: keystone user­-role-­add --­­user <your user> --­­role Member ­­--tenant <your tenant>
+	>Expecting an auth URL via either ­­--os-­auth-­url or env[OS_AUTH_URL]: keystone token-­get
+
+>>Glance
+	*Adding Images into Glance. Images uploaded to Glance should be ‘re­initialised’ or ‘syspreped’. You can find these images online if you want.
+	>1-(Get the image)- wget http://download.cirros­-cloud.net/0.3.2/cirros-­0.3.2-­x86_64-disk.img
+	>2-(Verify the disk image was copied successfully with the correct propierties): qemu­-img info cirros­-0.3.2-­x86_64-­disk.img.
+	Expected:
+		image: cirros­0.3.2­x86_64­disk.img 
+		file format: qcow2 
+		virtual size: 39M (41126400 bytes) 
+		disk size: 13M 
+		cluster_size: 65536 
+	>3-(Create a new image and import its content): glance image­-create ­--­name "My Cirros Image" ­--­is­public false --­­disk-­format qcow2 ­­--container-­format bare --­­file ~/cirros­-0.3.2­-x86_64­-disk.img
+	>Note:
+		The container format is ‘bare’ because it doesn’t require any additional images such as a kernel or initrd, it’s completely self­contained. The ‘is­public’ option allows any user within the tenant (project) to use the image rather than locking it down for the specific user uploading the image ­ we’ll set this to false to ensure that this image is only for you. 
+	

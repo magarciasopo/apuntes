@@ -1,0 +1,64 @@
+Cyclos
+Monitoraci´on basada en nagios 
+en vez desde servidor de nagios y dar de alta a cada host
+automaticamente da de alta un host a si mismo
+
+Puede funcionar en diferentes entornos: Openstack, Vmware...
+
+
+Mucho sincronismo con platon
+
+Platon -> Despliegue
+
+3 fases:
+Infrastructura
+Servidores
+Servidores -> Servicios
+
+
+Sirve de pgamento entre apis y scritps
+
+Ansible automatizaci´on de scripts: Creaci´on de maquinas y configuraci´on
+
+Diferentes entornos tenemos: int, pre,pro sin problema
+
+Comenzamos DEMO:
+
+Con dos redes. Solo dos ips flotantes
+
+tdaf-ccbroker pdihub
+
+workon platon para cargar platon
+
+cargamos el entorno mediante el scrpt set_env.sh (Cambia de dir end2end)
+comando: ansible-playbook network.yml
+
+Hasta ahora se ha creado 3 redes m´as con dos routers ()
+
+**********NOTA: HOT (with_sequence)
+
+Ejecutar: ansible-playbook nombrescript.yml
+
+Desde una de las maquinas podemos acceder a todas (como si son 20) 
+
+mediante el fichero ssh.conf (proxy command)
+
+para acceder dir local de cada maquina ssh -F ssh.cfn
+
+A cada maquina se le pueden asignar grupos o roles que indica que herramienta se instala en cada una de ellas dpendiendo de su grupo
+
+Fichero config.json:
+	Se añade una parte de cycloys en endpints 
+	paypal_notifications_
+	cyclos:
+		url
+
+		ansible-playbook config_vms.yml
+
+		primero instala los agentes en cada uno de los servidores, luego en la maquina de cyclos dice que quiere monitorizar
+
+El servidor cyclos no hace falta reiniar para detectar las nuevas alarmas. Sin embargo, con icinga hace falta.
+
+Relaci´on entre icinga y cyclos ????????
+
+_______mongo shardin y replica set
