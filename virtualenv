@@ -1,0 +1,22 @@
+Virtualenv is a dir where another python is installed.
+Besides, through pip it can be installed different packages to use with python.
+
+When a virtualven is activate the changes made are:
+
+	VIRTUAL_ENV="/var/env-orchestrator"
+	export VIRTUAL_ENV
+
+	_OLD_VIRTUAL_PATH="$PATH"
+	PATH="$VIRTUAL_ENV/bin:$PATH"
+	export PATH
+
+	if [ -n "$PYTHONHOME" ] ; then
+    _OLD_VIRTUAL_PYTHONHOME="$PYTHONHOME"
+    unset PYTHONHOME
+	fi
+
+NOTE: Instead of activate the virtualenv we can go to the bin /var/env-orchestrator/bin/python hola.py
+
+virtualenv -system-site-packages env -> your virtualenv will inherit packages from /usr/lib/python/sites-packages or wherever your packages are located.
+
+you can use the python or wsgi in the machine by the script 

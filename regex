@@ -1,0 +1,27 @@
+^	Beginning of a line
+$	End of a line
+.	Any character
+\s	whitespace character
+\S	Any non-whitespace character
+
+*	Repeats a character 0 or more times
+*?	Repeats a character 0 or more times (non-greedy)
++	Repeats one or more times
++?
+[aeiou]		Single character in the listed set
+[^XYZ]		Single character not in the listed set
+[a-z0-9]
+(			String extraction is to start
+)			String extraction is to end
+
+Greedy: When you find the first option -> Stop
+
+
+In python:
+	without regex:
+		line.find('From:') >= 0
+			print line
+
+	with regex:
+		if re.search('From:',line) : -> you could add if re.search('^From:',line):
+			print line

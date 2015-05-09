@@ -1,0 +1,16 @@
+sudo yum install mysql-devel gcc gcc-devel python-devel
+sudo easy_install mysql-python
+
+
+SOLUCION: pip install PyMySQL
+
+Requirements
+
+    Python – one of the following:
+        CPython >= 2.6 or >= 3.3
+        PyPy >= 2.3
+        IronPython 2.7
+    MySQL Server – one of the following:
+        MySQL >= 4.1
+        MariaDB >= 5.1
+

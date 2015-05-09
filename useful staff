@@ -13,3 +13,6 @@
 		 -N - do not execute a remote command
 		 user - user that have ssh access to the ssh server 
 		 ssh_server - the ssh server that will be used for forwarding/tunneling
+
+>>>COMPRESS FILES
+		tar -zcvf compressFileName.tar.gz folderToCompress

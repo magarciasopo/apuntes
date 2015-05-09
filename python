@@ -6,11 +6,29 @@
 	>print 'Hello world!'
 	>quit()
 	>type(xxx) -> To know the type funciona con constantes y vars
+	>print 'hello ' + 'there' = concatenation 
+
+>>Common functions
+	>type(xxx)
+	>i = float(varint)
+	>varint = int(varstr)
+	>var = raw_input('msg')
 
 >>VARS
 	x = 6
 	message = 'xxx'
 	pi = 3.22222
+
+>>Operators
+	** -> Power - ^
+	%  -> Remainder - as always
+	>Order
+		Parenthesis
+		Power
+		Multiplication
+		Addition
+		Left to Right
+		(If we have 8/4*5) Before the divion because of Left to Right
 
 >>>Result of a operation in the same format as operators
 
@@ -309,11 +327,22 @@ Note: None = NoneType != 'None'
 			['b', 'c']
 
 >>>Dictionaries
-
 	>>Dictionary is a list where the index is a string
 	>>Create dic
 		>eng2sp=dict{}
 		>print eng2sp
 		>eng2sp['one'] = 'uno'
 	>>The order of a dic is unpredictable
-	
+
+>>>Tricks:
+	>Print 'xxx' in dict
+		return True or False
+	>If xx not in dict :
+	>get(name,default)+1 -> Añadir valores al diccionario
+	>string[x:y]
+	>string[:]
+	>string[x:]
+	>range function = list, kind of index 
+	>Dir(x)
+		list functions to use with
+	>word = line.split()

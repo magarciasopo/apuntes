@@ -1,0 +1,56 @@
+remove: 
+
+	1 - STOP MONIT mysql
+
+	2 - STOP SERVICE MYSQL
+
+	3 - REMOVE MYSQL 
+		rpm -qa| grep mysql |xargs rpm -e
+
+	4 - SOLO FUNCIONA SI SE EJECUTA ESTO CON SUDO SU -!!!!!!!
+		rm /root/.my.cnf
+	*	rm /etc/my.cnf
+		rm -rf /var/lib/mysql
+		rm -rf /usr/lib64/mysql
+	*	rm -rf /etc/mysql
+	*	rm -rf /var/run/mysqld (Ver si es necesario: NO)
+
+Note: solo queda el /etc/mysql, /usr/bin/mysql
+Change pass:
+	$ mysql –u root –p
+	$ use mysql;
+	$ UPDATE user SET password=PASSWORD('newpass') WHERE User='root';
+	$ flush privileges;
+	$quit;
+
+GRANT usage ON *.* TO 'nagios'@'%' IDENTIFIED BY 'nagios' #Si una m´aquina de backend
+GRANT usage ON *.* TO 'nagios'@'localhost' IDENTIFIED BY 'nagios' #Para acceder solo desde localhost
+
+mysql> select user,host from user;
++----------+------------------------------------+
+| user     | host                               |
++----------+------------------------------------+
+| keypass  | %                                  |
+| keystone | %                                  |
+| nagios   | %                                  |
+| root     | %                                  |
+| root     | 127.0.0.1                          |
+| root     | ::1                                |
+|          | localhost                          |
+| keystone | localhost                          |
+| root     | localhost                          |
+|          | pre-iot-mysql-be-01.openstacklocal |
+| root     | pre-iot-mysql-be-01.openstacklocal |
++----------+------------------------------------+
+11 rows in set (0.00 sec)
+
+ERROR
+--------
+
+Error: Could not prefetch mysql_user provider 'mysql': Execution of '/usr/bin/mysql --defaults-extra-file=/root/.my.cnf -NBe SELECT CONCAT(User, '@',Host) AS User FROM mysql.user' returned 1: ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+
+
+Error: Execution of '/usr/bin/mysql --defaults-extra-file=/root/.my.cnf -e GRANT USAGE ON *.* TO 'root'@'localhost' IDENTIFIED BY PASSWORD '*73DCA1686669947820694B29F788EF8E618A1A1F' WITH MAX_USER_CONNECTIONS 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_QUERIES_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0' returned 1: ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+Error: /Stage[main]/Mysql::Server::Root_password/Mysql_user[root@localhost]/ensure: change from absent to present failed: Execution of '/usr/bin/mysql --defaults-extra-file=/root/.my.cnf -e GRANT USAGE ON *.* TO 'root'@'localhost' IDENTIFIED BY PASSWORD '*73DCA1686669947820694B29F788EF8E618A1A1F' WITH MAX_USER_CONNECTIONS 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_QUERIES_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0' returned 1: ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: Y
+
+git checkout 2e56e48a23e96969cff8447f5419b7c31394537c
