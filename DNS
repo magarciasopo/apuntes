@@ -1,12 +1,6 @@
-Buenos días,
+nslookup www.google.es
+	forward
+	reverse
+gethostip -d example.org
 
-Aprovechando el nuevo gestor de DNS que tenemos desplegado en nuestros entornos (Infoblox) estamos planteando implementar un DNSaaS sobre todos los entornos de Openstack. El alcance que tenemos previsto inicialmente es el siguiente:
-
-- Relación de subdominios a nivel de red externa y tenant (Ejemplo de nombre: mi_maquina.mi_tenant.ext_inet.ost.hi.inet)
-- Creación de registros de nombres durante el proceso de asignación de IPs flotantes
-- Eliminación de esos registros durante el proceso de desasignación de IPs flotantes
-- Interfaz web sencilla para la creación de alias sobre esos registros
-
-Nos gustaría conocer vuestro feedback respecto a este alcance y también vuestro interés respecto al servicio.
-
-Un saludo,
+nm-tool
