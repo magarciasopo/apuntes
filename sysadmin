@@ -9,6 +9,9 @@ sudo chage user -> modifica valores relarivos a la contraseña del usuario, [-l]
 /etc/fstab -> Informacion del filesystem 
 df -h -> Partition utilization
 mount -> información de los ficheros montados
+/etc/fstab -> Carga por defecto los ficheros que estan aqui.
+mount -a -> monta todo
+mount /dir -> monta este dir solo
 
 >>>>>>>>>>>NETWORKING
 /etc/network/interfaces -> Muestra las interfaces de cada una de las redes (lo, Ethernet, TCP/IP, bridging)

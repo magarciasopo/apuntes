@@ -9,11 +9,11 @@ remove:
 
 	4 - SOLO FUNCIONA SI SE EJECUTA ESTO CON SUDO SU -!!!!!!!
 		rm /root/.my.cnf
-	*	rm /etc/my.cnf
+		rm /etc/my.cnf
 		rm -rf /var/lib/mysql
 		rm -rf /usr/lib64/mysql
-	*	rm -rf /etc/mysql
-	*	rm -rf /var/run/mysqld (Ver si es necesario: NO)
+		rm -rf /etc/mysql
+		rm -rf /var/run/mysqld (Ver si es necesario: NO)
 
 Note: solo queda el /etc/mysql, /usr/bin/mysql
 Change pass:

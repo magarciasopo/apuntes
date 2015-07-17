@@ -3,3 +3,5 @@
 alias ssh="ssh -o BatchMode=yes -o ConnectTimeout=3 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -x"
 
 /scripts/launch_stack.sh -T -F -C hot/iot-auth-fe.yaml -E hot-env/EPG_Tenant201-IoT-demo_env.yaml -e int -r 500
+
+heat "${OS_OPTS}" stack-create ${stack_name} -f ${HOT_FILE} --environment-file=${FINAL_ENV_FILE}

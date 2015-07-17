@@ -1,3 +1,5 @@
  ./scripts/launch_stack.sh -T -F -C hot/iot-auth-fe.yaml -E hot-env/EPG_Tenant201-IoT-demo_env.yaml -e int -r 500
 
  /home/ma/repos/pdihub/iot-platform-cloudformation/scripts/launch_stack.sh -T -F -C ~/repos/pdihub/iot-platform-cloudformation/hot/iot-dns-fe.yaml -E ~/repos/pdihub/iot-platform-cloudformation/hot-env/EPG_Tenant201-IoT-demo_env.yaml -e int -r 500
+
+ /home/ma/heat/iot-platform-cloudformation/scripts/launch_stack.sh -T -F -C ~/heat/iot-platform-cloudformation/hot/iot-portal-fe.yaml -E ~/heat/iot-platform-cloudformation/hot-env/EPG_Tenant201-IoT-demo_env.yaml -e int -r 500

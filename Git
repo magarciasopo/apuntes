@@ -4,6 +4,9 @@ CURSO GIT (Borja)
 pdihub.hi.inet
 	DEV/scm-quiz
 
+>> tags
+	git tag -a nametag -m "comment"
+	git push origin branch --tags
 
 >>git log --oneline
 >>git commit -am "commit all files"
@@ -14,3 +17,67 @@ pdihub.hi.inet
 
 >> Branch
 	git checkout -b new_branch
+
+>> Stage undo
+	git rm --cached <added_file_to_undo>
+
+>> Borrar ultimo commit
+	reset hard => limpia el stage
+	reset soft => deja el puntero
+
+>> Look for files on history
+	git log --diff-filter=D --summary | grep xxx
+
+>> Remove file from history
+	git filter-branch --index-filter 'git rm --cached --ignore-unmatch filename' HEAD -- --all
+
+	git update-ref -d refs/original/refs/heads/master
+	git reflog expire --expire=now --all
+	git gc --prune=now
+
+
+>> Graph
+		git log --graph --decorate --pretty=oneline --abbrev-commit
+
+>>View history
+	git log --stat --oneline
+
+removed -> modules/piwik_kpis/files/cffi.rpm
+		-> modules/piwik_kpis/files/libffi.rpm
+		-> modules/piwik_kpis/files/libffi-devel-3.0.5-2.el5.x86_64.rpm
+		-> modules/piwik_kpis/files/env-kpiinf.zip
+		-> modules/piwik_kpis/files/unzip.exe
+
+
+
+
+
+		git filter-branch -f --index-filter 'git rm --cached --ignore-unmatch modules/piwik_kpis/files/cffi.rpm' -- --all 
+
+		git filter-branch -f --index-filter 'git rm --cached --ignore-unmatch modules/piwik_kpis/files/libffi.rpm' -- --all 
+
+		git filter-branch -f --index-filter 'git rm --cached --ignore-unmatch modules/piwik_kpis/files/libffi-devel-3.0.5-2.el5.x86_64.rpm' -- --all 
+
+		git filter-branch -f --index-filter 'git rm --cached --ignore-unmatch modules/piwik_kpis/files/env-kpiinf.zip' -- --all 
+
+		git filter-branch -f --index-filter 'git rm --cached --ignore-unmatch modules/piwik_kpis/files/unzip.exe' -- --all 
+
+
+Solucion final:
+
+	$ git clone --mirror git@puppet-code.aislada.hi.inet:puppet/iot_puppet.git
+
+	bfg --delete-files {env-kpiinf.zip} iot_puppet.git
+
+	cd iot_puppet.git
+
+	git reflog expire --expire=now --all && git gc --prune=now --aggressive
+
+	git push
+
+
+
+
+	export PATH="$HOME/.linuxbrew/bin:$PATH"
+	export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+	export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
